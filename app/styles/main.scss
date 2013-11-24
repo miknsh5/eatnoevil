@@ -1,6 +1,8 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
+@import 'compass/css3/background-size';
 @import 'sass-bootstrap/lib/bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600);
 
 .browsehappy {
     margin: 0.2em 0;
@@ -11,8 +13,21 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
+    // padding-top: 20px;
     padding-bottom: 20px;
+}
+
+
+
+// global overrides
+// -----------------
+h1 h2 h3 h4 h5 h6 p {
+    font-family: 'Open Sans', sans-serif; 
+}
+
+$color-green: rgb(243, 205, 157);
+.green {
+    color: $color-green;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -30,7 +45,7 @@ body {
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
@@ -67,10 +82,64 @@ body {
     margin-top: 28px;
 }
 
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.full-width {
+    width: 100% !important;
+}
+.landing {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;     
+    text-align: center;
+
+    background: url('../images/wood-bg-grad.jpg') no-repeat center center;
+
+    @include background-size(cover);
+
+    .content-area {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        text-align: center;
+        width: 60%;
+        font-size: 50%;
+        margin-top: 100px;
+
+    }
+
+    h1 {
+        text-transform: uppercase;
+        margin: 20px 0;
+        padding: 20px 0;
+        border-bottom: solid rgba(200,200,200,0.5) 1px;
+        border-top: solid rgba(200,200,200,0.5) 1px;
+        letter-spacing: 10px;
+        line-height: 1.5em;
+
+    }
+
+    h2 {
+        color: #aaa;
+        font-weight: 400;
+        // font-size: 2.5em;
+    }
+
+
+}
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        max-width: 1024px;
     }
 
     /* Remove the padding we set earlier */
@@ -88,4 +157,47 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+
+
+    .landing {
+        height: 600px;
+        width: 100%;
+
+        .content-area {
+            margin-top: 200px;
+            width: 40%;
+        }
+    }
+
 }
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: $screen-md-min) {
+    
+    h1 {
+        font-size: 5em;
+    }
+    h2 {
+        font-size: 3em;
+        font-weight: 400;
+    }
+
+    .landing {
+        .content-area {
+
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+// 
