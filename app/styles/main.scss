@@ -93,15 +93,17 @@ h2 {
 .full-width {
     width: 100% !important;
 }
+
+$shift-top: 400px;
+
 .landing {
     position: absolute;
-    height: 400px;
+    height: $shift-top;
     width: 100%;
     margin: 0 auto;     
     text-align: center;
 
     background: url('../images/wood-bg-grad.jpg') no-repeat center center;
-
     @include background-size(cover);
 
     .content-area {
@@ -131,10 +133,11 @@ h2 {
         font-weight: 400;
         // font-size: 2.5em;
     }
-
-
 }
 
+.main-content {
+    margin-top: $shift-top;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -168,6 +171,20 @@ h2 {
             width: 40%;
         }
     }
+
+    .main-content {
+        margin-top: $shift-top + 200px;
+
+        // .full-width-bg {
+
+        // }
+
+        // #spoon {
+        //     background: url('../images/spoon-grains.jpg') no-repeat center center;
+        //     @include background-size(cover);
+        // }
+    }
+
 
 }
 
