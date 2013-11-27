@@ -1,6 +1,8 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'compass/css3/background-size';
+@import 'compass/css3/transform';
+@import 'compass/css3/border-radius';
 @import 'sass-bootstrap/lib/bootstrap';
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600);
 
@@ -39,9 +41,9 @@ $color-green: rgb(243, 205, 157);
 }
 
 /* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
+// .header {
+    // border-bottom: 1px solid #e5e5e5;
+// }
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -90,22 +92,80 @@ h2 {
     font-size: 2em;
 }
 
-.full-width {
-    width: 100% !important;
+
+$section-height: 450px;
+
+
+.full-width-bg {
+    width: 100%;
+    // display: inline-block;
+    height: $section-height;
+
+    &.section0 {
+        // background: url('../images/wood-bg-grad.jpg') no-repeat center center;
+        // background: url('../images/wood-bg-grad-hi.jpg') no-repeat center center;
+        // background: url('../images/wood-bg-grad-lo.jpg') no-repeat center center;
+        background: url('../images/wood-bg-grad-blur.jpg') no-repeat center center;
+        @include background-size(cover);
+    }
+    &.section1 {
+        // background: url('../images/spoon-grains.jpg') no-repeat center center;
+        background: url('../images/spoon-grains-shad.jpg') no-repeat center center;
+        @include background-size(cover);
+    }
+    &.section2 {
+        background: url('../images/active-cycling.jpg') no-repeat center center;
+        @include background-size(cover);
+    }
 }
 
-$shift-top: 400px;
+.fix-top {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
 
 .landing {
-    position: absolute;
-    height: $shift-top;
-    width: 100%;
-    margin: 0 auto;     
-    text-align: center;
+    position: relative;
 
-    background: url('../images/wood-bg-grad.jpg') no-repeat center center;
-    @include background-size(cover);
+    .coming-soon {
+        font-size: 2em;
+        position: absolute;
+        top: 10px;
+        right: -30px;
+        @include transform(rotate(45deg));
 
+    }
+
+    .flavors {
+        margin: 20px 0;
+
+        .flavor {
+            margin: 0 15px;
+            display: inline-block;
+            width: 65px;
+            height: 65px;
+            border: solid 1px #aaa;
+            @include border-radius(50px);
+            @include background-size(cover);
+            position: relative;
+
+            &.chocolate {
+                background-image: url('../images/chocolate.jpg');
+            }
+            &.pumpkin {
+                background-image: url('../images/pumpkin.jpg');
+            }
+
+            h6 {
+                position: absolute;
+                bottom: -45px;
+                color: #ccc;
+                // font-size: 1.2em;
+            }
+        }
+
+    }
     .content-area {
         position: relative;
         z-index: 1;
@@ -125,18 +185,44 @@ $shift-top: 400px;
         border-top: solid rgba(200,200,200,0.5) 1px;
         letter-spacing: 10px;
         line-height: 1.5em;
+        font-weight: 800;
 
     }
 
     h2 {
         color: #aaa;
-        font-weight: 400;
-        // font-size: 2.5em;
+        font-weight: 200;
+        letter-spacing: 2px;
+        line-height: 1.2em;
+    }
+}
+
+.inner-copy {
+    position: relative;
+    max-width: 500px;
+    text-align: center;
+    margin-top: 100px;
+
+    &.lefty {
+
+    }
+
+    &.righty {
+        
+    }
+
+    h2 {
+        color: $color-green;
+    }
+    p {
+        color: #eee;
+        font-size: 1.2em;
+
     }
 }
 
 .main-content {
-    margin-top: $shift-top;
+    margin-top: $section-height;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -162,29 +248,35 @@ $shift-top: 400px;
     }
 
 
-    .landing {
-        height: 600px;
+    .full-width-bg {
+        height: $section-height + 100px;
         width: 100%;
+    }
 
-        .content-area {
-            margin-top: 200px;
-            width: 40%;
+    .landing .content-area {
+        margin-top: 180px;
+        width: 40%;
+        height: 600px !important;
+
+    }
+    .landing .flavors .flavor{
+        width: 100px;
+        height: 100px;
+        border: 2px solid #ccc;
+
+        h6 {
+            width: 80px;
+            left: 8px;
         }
     }
-
     .main-content {
-        margin-top: $shift-top + 200px;
+        margin-top: $section-height + 100px;
 
-        // .full-width-bg {
-
-        // }
-
-        // #spoon {
-        //     background: url('../images/spoon-grains.jpg') no-repeat center center;
-        //     @include background-size(cover);
-        // }
     }
 
+    .inner-copy {
+        text-align: left;
+    }
 
 }
 
@@ -198,12 +290,6 @@ $shift-top: 400px;
     h2 {
         font-size: 3em;
         font-weight: 400;
-    }
-
-    .landing {
-        .content-area {
-
-        }
     }
 
 }
