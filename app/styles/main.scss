@@ -13,10 +13,36 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     padding: 0.2em 0;
 }
 
+
 /* Space out content a bit */
 body {
     // padding-top: 20px;
     padding-bottom: 20px;
+}
+
+
+// set the background image for the site
+// -----------------
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+    
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+    
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }
 
 
@@ -34,16 +60,11 @@ $color-green: rgb(243, 205, 157);
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
 .footer {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Custom page header */
-// .header {
-    // border-bottom: 1px solid #e5e5e5;
-// }
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -64,26 +85,6 @@ $color-green: rgb(243, 205, 157);
     margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
-}
-
 h1 {
     font-size: 4em;
 }
@@ -93,31 +94,127 @@ h2 {
 }
 
 
-$section-height: 450px;
+
+// $section-height: 450px;
 
 
-.full-width-bg {
+$section-spacing: 200px;
+$section-row-height: 250px;
+
+.shaded {
+    background-color: rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.full-img {
+    position: relative;
+    right: 0;
+    // top: $section-row-height;
+    top: 0;
+    height: 270px;
     width: 100%;
-    // display: inline-block;
-    height: $section-height;
 
-    &.section0 {
-        // background: url('../images/wood-bg-grad.jpg') no-repeat center center;
-        // background: url('../images/wood-bg-grad-hi.jpg') no-repeat center center;
-        // background: url('../images/wood-bg-grad-lo.jpg') no-repeat center center;
-        background: url('../images/wood-bg-grad-blur.jpg') no-repeat center center;
+    &.pumpkin {
+        // background: url('../images/eat-no-evil-pumpkin-walnut.jpg') no-repeat center center;
+        background: url('../images/eat-no-evil-pumpkin-walnut-lo.jpg') no-repeat center center;
         @include background-size(cover);
     }
-    &.section1 {
-        // background: url('../images/spoon-grains.jpg') no-repeat center center;
-        background: url('../images/spoon-grains-shad.jpg') no-repeat center center;
+    &.chocolate {
+        // background: url('../images/eat-no-evil-chocolate-almond.jpg') no-repeat center center;
+        background: url('../images/eat-no-evil-chocolate-almond-lo.jpg') no-repeat center center;
         @include background-size(cover);
     }
-    &.section2 {
-        background: url('../images/active-cycling.jpg') no-repeat center center;
-        @include background-size(cover);
+
+    &.lefty {
+        left: 0 !important;
+    }
+
+    
+}
+
+.section {
+    margin-top: $section-spacing;
+    min-height: $section-row-height;
+    text-align: center;
+    // padding: 20px 0;
+    position: relative;
+
+    &.crop-row {
+        overflow: hidden;
+    }
+
+    .shade {
+        background-color: rgba(0,0,0,0.5);
+        min-height: 500px;
+        width: 110%;
+        position: absolute;
+        top: -50px;
+        z-index: 0;
+        left: -20px;
+    }
+    img.running {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        min-height: 100%;
+        min-width: 1024px;
+          
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
     }
 }
+
+.section-shim {
+    // margin-top: $section-row-height + $section-spacing;
+    margin-top: $section-spacing;
+}
+
+.light-copy {
+    padding: 40px 20px;
+
+    h1, h2 {
+        color: $color-green;
+        position: relative;
+        z-index: 1;        
+    }
+
+    p {
+        position: relative;
+        z-index: 1;        
+        color: #EEEEEE;
+        font-size: 1.2em;
+        font-weight: 200;
+        letter-spacing: 1px;
+    }
+}
+
+
+// .full-width-bg {
+//     width: 100%;
+//     // display: inline-block;
+//     height: $section-height;
+
+//     &.section0 {
+//         // background: url('../images/wood-bg-grad.jpg') no-repeat center center;
+//         // background: url('../images/wood-bg-grad-hi.jpg') no-repeat center center;
+//         // background: url('../images/wood-bg-grad-lo.jpg') no-repeat center center;
+//         // background: url('../images/wood-bg-grad-blur2.jpg') no-repeat center center;
+//         // background: url('../images/wood-bg-grad-angle.jpg') no-repeat center center;
+//         background: url('../images/wood-bg-grad-2x.jpg') no-repeat center center;
+//         @include background-size(cover);
+//     }
+//     &.section1 {
+//         // background: url('../images/spoon-grains.jpg') no-repeat center center;
+//         // background: url('../images/spoon-grains-shad.jpg') no-repeat center center;
+//         // @include background-size(cover);
+//     }
+//     &.section2 {
+//         background: url('../images/active-cycling.jpg') no-repeat center center;
+//         @include background-size(cover);
+//     }
+// }
 
 .fix-top {
     position: absolute;
@@ -126,7 +223,11 @@ $section-height: 450px;
 }
 
 .landing {
+    background: url('../images/wood-bg-grad-2x.jpg') no-repeat center center;
+    @include background-size(cover);
+    
     position: relative;
+    min-height: 500px;
 
     .coming-soon {
         font-size: 2.2em;
@@ -190,39 +291,11 @@ $section-height: 450px;
     }
 
     h2 {
-        color: #aaa;
-        font-weight: 200;
-        letter-spacing: 2px;
+        color: #EEE;
+        font-weight: 400;
+        letter-spacing: 5px;
         line-height: 1.2em;
     }
-}
-
-.inner-copy {
-    position: relative;
-    max-width: 500px;
-    text-align: center;
-    margin-top: 100px;
-
-    &.lefty {
-
-    }
-
-    &.righty {
-        
-    }
-
-    h2 {
-        color: $color-green;
-    }
-    p {
-        color: #eee;
-        font-size: 1.2em;
-
-    }
-}
-
-.main-content {
-    margin-top: $section-height;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -233,7 +306,6 @@ $section-height: 450px;
 
     /* Remove the padding we set earlier */
     .header,
-    .marketing,
     .footer {
         padding-left: 0;
         padding-right: 0;
@@ -242,40 +314,57 @@ $section-height: 450px;
     .header {
         margin-bottom: 30px;
     }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
+
+    
+    .full-img {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        top: 0;
     }
 
-
-    .full-width-bg {
-        height: $section-height + 100px;
-        width: 100%;
-    }
-
-    .landing .content-area {
-        margin-top: 180px;
-        width: 40%;
-        height: 600px !important;
+    .section {
+        margin-top: $section-spacing;
+        // margin-top: 200px;
+        // min-height: 350px;
+        min-height: $section-row-height * 1.2;
+        text-align: left;
 
     }
-    .landing .flavors .flavor{
-        width: 100px;
-        height: 100px;
-        border: 2px solid #ccc;
 
-        h6 {
-            width: 80px;
-            left: 8px;
+    .light-copy {
+        p {
+            font-size: 1.3em;
+        }   
+
+        h2.footy {
+            margin-top: 100px;
         }
     }
-    .main-content {
-        margin-top: $section-height + 100px;
 
+
+    .section-shim {
+        margin-top: $section-spacing * 1.2;
     }
 
-    .inner-copy {
-        text-align: left;
+    .landing {
+        min-height: 550px; 
+    
+        .content-area {
+            margin-top: 180px;
+            width: 40%;
+        }
+    
+        .flavors .flavor{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #ccc;
+
+            h6 {
+                width: 80px;
+                left: 8px;
+            }
+        }
     }
 
 }
@@ -290,6 +379,23 @@ $section-height: 450px;
     h2 {
         font-size: 3em;
         font-weight: 400;
+    }
+
+
+
+    .section {
+        // margin-top: 300px;
+        // min-height: 400px;
+        margin-top: $section-spacing;
+        min-height: $section-row-height * 1.5;
+    }
+
+    .section-shim {
+        margin-top: $section-spacing * 1.5;
+    }
+
+    .landing {
+        min-height: 700px; 
     }
 
 }
