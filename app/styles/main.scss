@@ -101,6 +101,11 @@ h2 {
 $section-spacing: 200px;
 $section-row-height: 250px;
 
+#backdrop {
+    position:absolute;
+    z-index: -1;
+}
+
 .shaded {
     background-color: rgba(0,0,0,0.5);
     position: relative;
@@ -166,6 +171,11 @@ $section-row-height: 250px;
     }
 }
 
+.label-white {
+    background-color: #eee;
+    color: #222;
+}
+
 .section-shim {
     // margin-top: $section-row-height + $section-spacing;
     margin-top: $section-spacing;
@@ -190,32 +200,6 @@ $section-row-height: 250px;
     }
 }
 
-
-// .full-width-bg {
-//     width: 100%;
-//     // display: inline-block;
-//     height: $section-height;
-
-//     &.section0 {
-//         // background: url('../images/wood-bg-grad.jpg') no-repeat center center;
-//         // background: url('../images/wood-bg-grad-hi.jpg') no-repeat center center;
-//         // background: url('../images/wood-bg-grad-lo.jpg') no-repeat center center;
-//         // background: url('../images/wood-bg-grad-blur2.jpg') no-repeat center center;
-//         // background: url('../images/wood-bg-grad-angle.jpg') no-repeat center center;
-//         background: url('../images/wood-bg-grad-2x.jpg') no-repeat center center;
-//         @include background-size(cover);
-//     }
-//     &.section1 {
-//         // background: url('../images/spoon-grains.jpg') no-repeat center center;
-//         // background: url('../images/spoon-grains-shad.jpg') no-repeat center center;
-//         // @include background-size(cover);
-//     }
-//     &.section2 {
-//         background: url('../images/active-cycling.jpg') no-repeat center center;
-//         @include background-size(cover);
-//     }
-// }
-
 .fix-top {
     position: absolute;
     top: 10px;
@@ -227,6 +211,7 @@ $section-row-height: 250px;
     @include background-size(cover);
     
     position: relative;
+    z-index: 1;
     min-height: 500px;
 
     .coming-soon {
@@ -294,7 +279,7 @@ $section-row-height: 250px;
         color: #EEE;
         font-weight: 400;
         letter-spacing: 5px;
-        line-height: 1.2em;
+        line-height: 1.5em;
     }
 }
 
@@ -374,7 +359,7 @@ $section-row-height: 250px;
 @media screen and (min-width: $screen-md-min) {
     
     h1 {
-        font-size: 5em;
+        font-size: 7em;
     }
     h2 {
         font-size: 3em;
