@@ -290,8 +290,8 @@ module.exports = function (grunt) {
                 'compass',
                 'copy:styles',
                 'imagemin',
-                'svgmin'
-                // 'htmlmin'
+                'svgmin',
+                'htmlmin'
             ]
         }
     });
