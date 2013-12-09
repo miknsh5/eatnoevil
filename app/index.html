@@ -16,6 +16,31 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+
+        <style>
+
+        #mc_embed_signup {
+            margin: 0 auto;
+            text-align: center;
+
+        }
+        #mc_embed_signup .clear {
+            text-align: center;
+        }
+        #mc_embed_signup .mc-field-group {
+            color: #eee;
+        }
+
+        #mc_embed_signup input.button {
+            margin: auto !important;
+            margin-top: 10px !important;
+        }
+        #mc_embed_signup input.email {
+            margin: auto !important;
+            margin-top: 10px;
+        }
+
+        </style>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -108,12 +133,42 @@
             <div class="container">
                 <div class="light-copy text-center">
                     <h2 class="footy">Coming Soon!</h2>
-                    <p>We're finishing up packaging and working on our first production run slated for <strong>early 2014</strong>. Sign up to be the first know when we're ready and get <span class="label label-info">50% Off</span> your first order!</p>
+                    <p>We're finishing up packaging and working on our first production run slated for <strong>early 2014</strong>. 
+                    Sign up to be the first know when we're ready and get <span class="label label-info">50% Off</span> your first order!</p>
+
+
+                   <!-- Begin MailChimp Signup Form -->
+                   <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+                   <style type="text/css">
+                    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:300px;}
+                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                   </style>
+                   <div id="mc_embed_signup">
+                   <form action="http://eatnoevilfood.us3.list-manage2.com/subscribe/post?u=6895ab19e9559c3dc75e7a939&amp;id=331581fd9d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                       <div style="position: absolute; left: -5000px;"><input type="text" name="b_6895ab19e9559c3dc75e7a939_331581fd9d" value=""></div>
+                    <div class="clear"><input type="submit" value="Sign Up!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                   </form>
+                   </div>
+
+                   <!--End mc_embed_signup-->
+
+                    <div class="fb-like" data-href="http://www.eatnoevilfood.com" data-width="200" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
                 </div>
             </div>
         </div>
 
-
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
